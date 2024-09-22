@@ -1,3 +1,4 @@
+// create user data array
 const userData = [
   {
     id: 0,
@@ -20,13 +21,13 @@ const loginUser = (req, res) => {
   let email = req.body.email
   let password = req.body.password
 
-  console.log('loginController.jsx - loginUser', email, password)
+  console.log('loginController.jsx - loginUser', req.body)
 
   //find the user from userData array by matching the email
   const foundUser = userData.find((user)=> user.email === email)
   console.log('loginController.jsx - foundUser result', foundUser)
 
-  // if filter found a user, then check the password
+  // if find found a user, then check the password
   if (foundUser) {
     if(foundUser.password === password) {
       // correct password
