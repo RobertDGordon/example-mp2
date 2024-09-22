@@ -22,7 +22,7 @@ const loginUser = (req, res) => {
 
   console.log('loginController.jsx - loginUser', email, password)
 
-  res.status(200)
+  res.status(200).json( {result: "success"})
 }
 
 module.exports = {
