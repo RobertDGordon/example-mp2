@@ -1,5 +1,5 @@
 # Example Mini Project 2 App
-This repo contains both a front end (in /public), and a backend API (index.js, with MVC folder)
+This repo contains both a front end (in `/public`), and a backend API (`index.js`, with MVC folder structure)
 
 ## How to run
 1. Install the packages with the command `npm i`
