@@ -22,7 +22,24 @@ const loginUser = (req, res) => {
 
   console.log('loginController.jsx - loginUser', email, password)
 
-  res.status(200).json( {result: "success"})
+  //find the user from userData array by matching the email
+  const foundUser = userData.find((user)=> user.email === email)
+  console.log('loginController.jsx - foundUser result', foundUser)
+
+  // if filter found a user, then check the password
+  if (foundUser) {
+    if(foundUser.password === password) {
+      // correct password
+      res.status(200).json( {result: "success"})
+    } else (
+      // password bad
+      res.status(401).json( {result: "Email or password incorrect"})
+    )
+  } else {
+    //user not found
+    res.status(404).json( {result: "Email or password not found"})
+  }
+  
 }
 
 module.exports = {
