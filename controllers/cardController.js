@@ -51,7 +51,7 @@ const updateCard = (req, res) => {
   let title = req.body.title
   let text = req.body.text
 
-  console.log(cardId, title, text)
+  console.log('updateCard:', cardId, title, text)
 
   // find the correct id to update, and then edit the array with new data
 
@@ -66,7 +66,7 @@ const updateCard = (req, res) => {
     text: text
   }
 
-  console.log('new card data', newData)
+  console.log('New card data', newData)
 
   res.status(200).json({ result: newData})
 }
