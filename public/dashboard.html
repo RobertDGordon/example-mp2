@@ -108,7 +108,6 @@
         // toggle showing the form
         if (editFormButton.innerText === "Edit") {
           // update the edit form style to show
-          console.log(editForm.style.display);
           editForm.style.display = "inline";
 
           //change the button to say cancel
@@ -129,8 +128,6 @@
         // get the data from the inputs using the id+cardId
         const title = document.querySelector(`#title-${cardId}`).value;
         const text = document.querySelector(`#text-${cardId}`).value;
-
-        console.log("handleEditCard: ", title);
 
         fetch(`http://localhost:3000/api/cards/${cardId}`, {
           method: "PUT",
